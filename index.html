@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Stjärnstaden Rp - Staff ansökan</title>
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/1073249085127135312/1109856578535964702/wolf-esport-gaming-mascot-logo-template-hand-draw-wolf-esport-gaming-mascot-logo-template-262571717-transformed-removebg-preview_1.png">
+
+	<link rel="stylesheet" href="./css/main.css" />
+</head>
+<body>
+	<main>
+		<section class="section-contact">
+			<div class="container">
+				<h1>Staff ansökan</h1>
+				<p>Hej!</p>
+				<p>När du ansöker till staff så kommer du att börja som Helper och därefter utvecklas in i det såkallade "ordinära staff teamet".
+					Som staff är det viktigt att du är engagerad och målmedveten, att du har driv och att du framförallt vill sätta serverns intressen i centrum och 
+					aktivt arbeta för ett bättre Stjärnstaden, för att du i framtiden ska kunna bli en del i servern framåt.</p>
+					<p>Lycka till!</p>
+
+				<form
+				method="POST" 
+  				action="https://script.google.com/macros/s/AKfycbzwdgZS0eDiwxNl0zw6giKXXlzwx9fcW3MU8ndmsrqCqB9Xjrryg6RYYEtuWydmEQwMGw/exec"
+>
+					<div class="form-group">
+						<label for="firstname">Vad är ditt namn i verkligheten?*</label>
+						<input 
+							type="text" 
+							name="namn" 
+							id="fname"
+							required 
+							class="form-element"
+							placeholder="Ditt svar" />
+					</div>
+					<div class="form-group">
+						<label for="email">Vad är ditt discord namn?*</label>
+						<input type="text" name="discord namn" id="fname" required class="form-element" placeholder="Moon_boy#3068" />
+					</div>
+					<div class="form-group">
+						<label for="lastname">Hur gammal är du?*</label>
+						<input type="ålder" name="ålder" id="fname" required class="form-element" placeholder="Ditt svar" />
+					</div>
+                    <div class="form-group full">
+						<label for="message">Varför ska just du bli staff?*</label>
+						<textarea name="Varför ska just du bli staff?" id="fname" required class="form-element" placeholder="Ditt svar"></textarea>
+					</div>
+                    <div class="form-group full">
+						<label for="message">Hur länge kan du vara aktiv på servern varje dag?*</label>
+						<textarea name="Hur länge kan du vara aktiv på servern varje dag?" id="fname" required class="form-element" placeholder="Ditt svar"></textarea>
+					</div>
+					<div class="form-group full">
+						<label for="message">Hur länge har du spelat på Stjärnstaden?*</label>
+						<textarea name="Hur länge har du spelat på Stjärnstaden?" id="fname" required class="form-element" placeholder="Ditt svar"></textarea>
+					</div>
+                    <div class="form-group full">
+						<label for="message">Har du tidigare erfarenheter som staff?*</label>
+						<textarea type="text" name="Har du tidigare erfarenheter som staff?" id="fname" required class="form-element" placeholder="Ditt svar" ></textarea>
+					</div>
+					<ul class="form-group full" name="Vilka områden i staff teamet är du intresserad av att jobba inom?" id="fname" required class="form-element">
+						<label for="message">Vilka områden i staff teamet är du intresserad av att jobba inom?*</label>
+						<label for="message">(Notera att dessa är vilka områden du är "beredda" att arbeta inom, vi kan i många fall inte erbjuda platser i vissa områden.)</label>
+						<li class="inputChoices-choice"><label class="iconic"><input type="checkbox" name="RP" value="Ja" class="checkAll375"><i aria-hidden="true"></i><span class="iconic-label" name="Vilka områden i staff teamet är du intresserad av att jobba inom?">RP</span></label></li>
+						<li class="inputChoices-choice"><label class="iconic"><input type="checkbox" name="Support" value="Ja" class="checkAll375"><i aria-hidden="true"></i><span class="iconic-label" name="Vilka områden i staff teamet är du intresserad av att jobba inom?">Support</span></label></li>
+						<li class="inputChoices-choice"><label class="iconic"><input type="checkbox" name="Jobb" value="Ja" class="checkAll375"><i aria-hidden="true"></i><span class="iconic-label" name="Vilka områden i staff teamet är du intresserad av att jobba inom?">Jobb</span></label></li>
+						<li class="inputChoices-choice"><label class="iconic"><input type="checkbox" name="Kriminell" value="Ja" class="checkAll375"><i aria-hidden="true"></i><span class="iconic-label" name="Vilka områden i staff teamet är du intresserad av att jobba inom?">Kriminell</span></label></li>
+						<li class="inputChoices-choice"><label class="iconic"><input type="checkbox" name="Donation" value="Ja" class="checkAll375"><i aria-hidden="true"></i><span class="iconic-label" name="Vilka områden i staff teamet är du intresserad av att jobba inom?">Donation</span></label></li>
+						</ul>
+					<div class="form-group">
+						<label for="email">Finns det något område du inte skulle vilja jobba inom?*</label>
+						<input type="text" name="Finns det något område du inte skulle vilja jobba inom?" id="fname" required class="form-element" placeholder="Ditt svar" />
+					</div>
+					<div class="submit-group">
+						<input type="submit" value="SKICKA IN ANSÖKAN" onClick="validation(event)" onclick = "fun();" />
+					</div>
+				</form>
+
+				<!---Scriptet--->
+				<script>
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbzwdgZS0eDiwxNl0zw6giKXXlzwx9fcW3MU8ndmsrqCqB9Xjrryg6RYYEtuWydmEQwMGw/exec'
+                const form = document.forms['Staff ansökningar - Sjärnstaden RP']
+              
+                form.addEventListener('submit', e => {
+                  e.preventDefault()
+                  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                    .then(response => console.log('Ansökning är skickad!', response))
+                    .catch(error => console.error('Error!', error.message))
+                })
+
+				function validation() {
+  //                               big D, throws error 
+  // var fname = document.getElementByID("fname").value;
+     var fname = document.getElementById("fname").value;
+  console.log(fname);
+  if (fname == "")
+    alert("Fyll i alla svar först!");  
+}  
+				  </script>
+				  <!---Slutet av Scriptet--->
+
+			</div>
+		</section>
+	</main>
+</body>
+</html>
